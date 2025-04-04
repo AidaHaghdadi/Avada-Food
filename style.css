@@ -1,0 +1,689 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f5f6f1;
+}
+@font-face {
+    font-family: 'Catamaran';
+    src: url(/fonts/Catamaran-Regular.ttf);
+}
+@font-face {
+    font-family: 'Catamaran-bold';
+    src: url(/fonts/Catamaran-Bold.ttf);
+}
+@font-face {
+    font-family: 'Vidaloka';
+    src: url(/fonts/Vidaloka-Regular.ttf);
+}
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?wrizc8');
+    src:  url('fonts/icomoon.eot?wrizc8#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?wrizc8') format('truetype'),
+        url('fonts/icomoon.woff?wrizc8') format('woff'),
+        url('fonts/icomoon.svg?wrizc8#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+[class^="icon-"], 
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-mail-envelope-closed:before {
+    content: "\e900";
+}
+.icon-phone:before {
+    content: "\e901";
+}
+.icon-location:before {
+    content: "\e902";
+}
+.icon-map-marker:before {
+    content: "\e902";
+}
+.icon-marker:before {
+    content: "\e902";
+}
+.icon-pin:before {
+    content: "\e902";
+}
+.icon-search:before {
+    content: "\e986";
+}
+.icon-facebook:before {
+    content: "\ea90";
+}
+.icon-instagram:before {
+    content: "\ea92";
+}
+.icon-youtube:before {
+    content: "\ea9d";
+}
+.icon-x:before {
+    content: "\e903";
+}
+/* NAVIGATION */
+.navigation {
+    width: 100%;
+    font-family: 'Catamaran', Arial, Helvetica, sans-serif;
+    padding: 0 100px;
+}
+/* Top bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 55px;
+
+}
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 17px;  
+    margin-bottom: 55px;
+}
+.download-app {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.download-text {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+.download-text:hover {
+    color: #fd761d;
+}
+.ios-btn {
+    background-color: #fd761d;
+    color: white;
+    padding: 4px 6px;
+    border-radius: 3px;
+    line-height: 1;
+    font-size: 10px;
+    text-decoration: none;
+}
+.advertise {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.advertise:hover {
+    color: #fd761d;
+}
+/* logo */
+.logo {
+    padding-right: 90px;
+    padding-top: 15px;
+}
+/* social icon */
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 85px;
+
+}
+.social-icon {
+    position: relative;
+}
+.social-icon a {
+    color: #555;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+.social-icon a:hover {
+    background-color: white;
+    color: black;
+}
+.social-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #555;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.social-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid #555;
+}
+.social-icon:hover .social-tooltip {
+    opacity: 1;
+}
+/* Main navigation */
+.main-navigation {
+    width: 100%;
+    margin-top: 15PX;
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding-bottom: 6px;
+    font-size: 17px;
+    padding: 10px;
+}
+.nav-links a:hover {
+    color: #fd761d;
+}
+.nav-links a.active {
+    color: #fd761d;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.75px;
+    background-color: #fd761d;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+/* HEADEER */
+.header {
+    width: 100%;
+    position: relative;
+    height: 600px;
+    margin-top: 30px;
+    background-image: url(images/slide1-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.content-container {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    
+}
+.total-box {
+    background-color: white;
+    padding: 40px 0px 30px;
+    border-radius: 12px;
+    position: relative;
+}
+.orange-box {
+    font-family: 'Catamaran';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fc7523;
+    color: #fffbf0;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.main-title {
+    font-family: 'Vidaloka';
+    font-weight: lighter;
+    color: #343339;
+    font-size: 47px;
+    text-align: center;
+}
+.date {
+    font-family: 'Catamaran';
+    color: #65655f;
+    font-size: 17px;
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+/* FOODIE JOURNAL */
+.journal-section {
+    font-family: 'Catamaran';
+    background-color: white;
+    width: 80%;
+    max-width: 1200px;
+    position: relative;
+    margin: -8vh auto 0;
+    padding: 27px 40px 40px;
+}
+.title-section {
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #3c3335;
+    margin-bottom: 40px;
+}
+.title-section::before,
+.title-section::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #efefef;
+    margin: 13px 10px;
+}
+.journal-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.journal-card {
+    width: 32%;
+}
+.card-image-container {
+    position: relative;
+    overflow: hidden;
+}
+.card-image-link {
+    width: 100%;
+    height: 100%;
+}
+.card-image {
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease;
+}
+.card-content {
+    font-family: 'Vidaloka';
+    padding: 8px;
+    text-align: center;
+
+}
+.card-title-link, 
+.admin-link {
+    text-decoration: none;
+    color: #343437;
+}
+.card-title {
+    font-size: 22px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+.card-title-link:hover .card-title {
+    color: #FF6B35;
+}
+
+.card-info {
+    color: #979292;
+    font-size: 13px;
+}
+.admin-link:hover {
+    color: #FF6B35;
+}
+.card-image-container:hover .card-image {
+    transform: scale(1.05);
+}
+.card-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.card-image-container:hover::after {
+    opacity: 1;
+}
+/* POPULAR RECIPES */
+.popular-recipes {
+    width: 81.5%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 50px 25px 31.35px;
+
+}
+.recipes-header {
+    font-family: 'Catamaran';
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.recipes-header h2 {
+    font-size: 17px;
+    color: #333338;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.recipes-header p {
+    color: #67615A;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.recipes-container {
+    display: flex;
+    gap: 30px;
+}
+/* left box */
+.left-box {
+    background: white;
+    flex: 1;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+.left-box:hover {
+    transform: scale(1.02);
+}
+.recipe-image {
+    background-image: url('images/Yogurt-Nan.jpg');
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+}
+.recipe-content {
+    padding: 30px;
+}
+.recipe-content h3 {
+    font-family: 'Vidaloka';
+    font-weight: lighter;
+    font-size: 22px;
+    color: #333338;
+    letter-spacing: 0.25px;
+}
+.recipe-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-bottom: 28px;
+}
+.recipe-tag {
+font-size: 17px;
+color: #67615A;
+text-decoration: none;
+}
+.recipe-tag:hover {
+color: #fc7523;
+}
+.recipe-content p {
+    color: #67615A;
+    line-height: 1.6;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.learn-more-btn {
+    padding: 13px 29px;
+    background: #fc7523;
+    color: white;
+    text-decoration: none;
+}
+.learn-more-btn:hover {
+    background: #ec683b;
+}
+/* right box */
+.right-box {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.recipe-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: calc(50% - 10px);
+    height: calc(33.333% - 14px); 
+    aspect-ratio: 1 / 0.7;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(255, 107, 61, 1), rgba(255, 107, 61, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.recipe-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 11.75px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'Vidaloka'; 
+    white-space: wrap;
+    text-align: center;
+}
+.recipe-card:hover {
+    transform: scale(1.05);
+}
+.recipe-card:hover .hover {
+    opacity: 1;
+}
+.recipe-card:hover .recipe-hover {
+    opacity: 1;
+}
+/* CULINARY COLLECTION */
+.culinary-colection {
+    font-family: 'Catamaran';
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.culinary-header {
+    margin-top: 130px;
+    margin-bottom: 50px;
+}
+.culinary-header h1 {
+    font-size: 17px;
+    color: #333338;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.culinary-header p {
+    font-size: 17px;
+    color: #67615A;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.culinary-collections {
+    font-family: 'Catamaran';
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 40px;
+    margin-top: 40px;
+}
+.collection-item {
+    width: 270px;
+    height: 190px;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.collection-image {
+    /* border: 2px solid black; */
+    width: 100%;
+    height: 70%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+.collection-image-link {
+    height: 100%;
+    width: 100%;
+}
+.collection-title-link {
+    color: #333338;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.collection-content {
+    padding: 18px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.collection-title {
+    font-size: 15px;
+    color: #333338;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.collection-image-link:hover .collection-image {
+    transform: scale(1.05);
+}
+.collection-content:hover {
+    background-color: #ff6b3d;
+    color: white;
+}
+.collection-content:hover .collection-description {
+    color: white;
+}
+.collection-content:hover .collection-title-link {
+    color: white;
+}
+/* pictures */
+.appetisers { 
+    background-image: url('images/premium-recipes.webp'); 
+}
+.bakery { 
+    background-image: url('images/baking-recipes.webp'); 
+}
+.dinner { 
+    background-image: url('images/dinner-recipes.webp'); 
+}
+.drinks { 
+    background-image: url('images/drinks-recipes.webp'); 
+}
+.healthy { 
+    background-image: url('images/healthy-recipes.webp'); 
+}
+.quick-easy { 
+    background-image: url('images/quick-easy-recipes.webp'); 
+}
+.soups { 
+    background-image: url('images/soups-recipes.webp'); 
+}
+.staff-picks { 
+    background-image: url('images/staff-picks.webp'); 
+}
+/* SUBSCRIBE & RECEIVE A FREE EBOOK */
+.subscribe-box {
+    background: url('images/subscribe-sec-bg.png') no-repeat center center/cover , white;
+    font-family: 'Catamaran';
+    width: 100%;
+    height: 400px;
+    padding: 100px;
+    margin-top: 100px;
+}
+.subscribe-content {
+    text-align: center;
+}
+.subscribe-content h2 {
+    font-family: 'Vidaloka';
+    margin-bottom: 20px;
+    color: #333338;
+    font-size: 30px;
+    font-weight: lighter;
+}
+.subscribe-content h2>span {
+    color: #ec683b;
+}
+.subscribe-content .para1 {
+    color: #67615A;
+    font-size: 17px;
+    margin: 0 0 40px;
+}
+input[type="email"] {
+    padding: 15px;
+    border: 2px solid #dfdfdf;
+    border-radius: 5px;
+    width: 375px;
+    transition: border-color 0.3s;
+}
+input[type="email"]:hover {
+    border-color: #fc7523;
+}
+button {
+    background-color: #fc7523;
+    padding: 16px 50px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bolde;
+    cursor: pointer;
+    margin-left: 30px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #eb752d;
+}
+.subscribe-content .para2 {
+    color: #67615A;
+    font-size: 14px;
+    margin-top: 30px;
+}
