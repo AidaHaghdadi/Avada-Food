@@ -823,3 +823,141 @@ button:hover {
     text-decoration: none;
     color: inherit;
 }
+
+/* Responsive */
+.gallery {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    width: 25%;
+    height: 300px;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(255, 107, 61, 1), rgba(255, 107, 61, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'Vidaloka'; 
+    text-align: center;
+}
+.gallery-item:hover .overlay-text {
+    opacity: 1;
+}
+/* WAY OF COMMUNICATION BOX */
+.communication {
+    font-family: 'Catamaran';
+    background-color: white;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+}
+.communication-content {
+    
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-icons a {
+    position: relative;
+    text-decoration: none;
+}
+.social-icons a:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: orange;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+.social-icons a:hover::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid orange;
+}
+.menu a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 0;
+    position: relative;
+}
+.menu a:hover {
+    color: orange;
+}
+.menu a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 0;
+    background: orange;
+    transition: height 0.3s ease;
+}
+.menu a:hover::before {
+    height: 100%;
+}
+.store-buttons a {
+    display: block;
+    margin-bottom: 10px;
+}
+/* FOOTER */
+.footer {
+    font-family: 'Catamaran';
+    background-color: #f5f6f1;
+    font-size: 12px;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    padding-top: 30px;
+}
+.footer-link {
+    text-decoration: none;
+    color: inherit;
+}
